@@ -54,15 +54,6 @@
             position: relative;
         }
 
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 15px;
-        }
-
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -89,6 +80,31 @@
             font-size: 1.5em;
         }
 
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .cover-letter {
+            background-color: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+        }
+
         .resume-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -102,35 +118,12 @@
             border-radius: 5px;
         }
 
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            text-align: center;
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 250px;
-            background-color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #888;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
         @media (max-width: 600px) {
-            .resume-grid, .skill-grid {
+            .container {
+                width: 100%;
+                border-radius: 0;
+            }
+            .resume-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -140,9 +133,6 @@
     <div class="background-blur"></div>
     <div class="container">
         <div class="header">
-            <!-- Profile Photo Placeholder -->
-            <img src="/api/placeholder/200/200" alt="Aarav Engineer" class="profile-photo">
-            
             <h1>Aarav Engineer</h1>
             <div class="contact-info">
                 Email: aaravaengineer@gmail.com | Phone: 351-220-0966
@@ -150,65 +140,62 @@
         </div>
 
         <div class="section">
+            <h2 class="section-title">Education</h2>
+            <p>8th Grade Student | Stony Brook Middle School</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-list">
+                <div class="skill-tag">Public Speaking</div>
+                <div class="skill-tag">Communication</div>
+                <div class="skill-tag">Teamwork</div>
+                <div class="skill-tag">Collaboration</div>
+                <div class="skill-tag">STEM Problem-Solving</div>
+                <div class="skill-tag">Social Media</div>
+                <div class="skill-tag">Leadership</div>
+                <div class="skill-tag">Multilingual</div>
+            </div>
+        </div>
+
+        <div class="section">
             <h2 class="section-title">Resume</h2>
             <div class="resume-grid">
-                <!-- Education Section -->
                 <div class="resume-section">
                     <h3>Education</h3>
                     <p>8th Grade Student</p>
                     <p>Stony Brook Middle School</p>
-                    
-                    <!-- Optional: Photo of school or academic achievement -->
-                    <div class="photo-placeholder">
-                        School Photo or Academic Achievement
-                        (Click to Upload)
-                    </div>
                 </div>
 
-                <!-- Skill Set Section -->
                 <div class="resume-section">
                     <h3>Skill Set</h3>
-                    <div class="skill-grid">
-                        <div class="skill-tag">Public Speaking</div>
-                        <div class="skill-tag">Communication</div>
-                        <div class="skill-tag">Teamwork</div>
-                        <div class="skill-tag">Collaboration</div>
-                        <div class="skill-tag">STEM Problem-Solving</div>
-                        <div class="skill-tag">Leadership</div>
-                    </div>
-                    
-                    <!-- Optional: Photo demonstrating skills -->
-                    <div class="photo-placeholder">
-                        Skills or Achievement Photo
-                        (Click to Upload)
-                    </div>
+                    <ul>
+                        <li>Public Speaking</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>STEM Problem-Solving</li>
+                        <li>Leadership</li>
+                    </ul>
                 </div>
 
-                <!-- Volunteer Experience Section -->
                 <div class="resume-section">
                     <h3>Volunteer Experience</h3>
-                    <p>List your volunteer activities or community involvement here</p>
-                    
-                    <!-- Optional: Volunteer activity photo -->
-                    <div class="photo-placeholder">
-                        Volunteer Activity Photo
-                        (Click to Upload)
-                    </div>
+                    <p>Seeking opportunities to contribute to school and community projects</p>
                 </div>
 
-                <!-- Other Contact Section -->
                 <div class="resume-section">
-                    <h3>Other Contacts</h3>
-                    <p>Social Media: @aaravengineer</p>
-                    <p>Additional Contact Methods</p>
-                    
-                    <!-- Optional: QR Code or Additional Contact Photo -->
-                    <div class="photo-placeholder">
-                        QR Code or Contact Information Graphic
-                        (Click to Upload)
-                    </div>
+                    <h3>Other Contact</h3>
+                    <p>LinkedIn: Coming Soon</p>
+                    <p>GitHub: Future Projects</p>
                 </div>
             </div>
+        </div>
+
+        <div class="section cover-letter">
+            <h2 class="section-title">About Me</h2>
+            <p>As an 8th-grade student, I am passionate about learning and personal growth. My strengths in communication, teamwork, and problem-solving drive me to take on new challenges and continuously expand my knowledge.</p>
+            
+            <p>Being multilingual in English and German, I'm excited about the potential to connect with diverse groups and approach challenges from multiple perspectives. I'm committed to developing my skills and making meaningful contributions to my school and community.</p>
         </div>
     </div>
 </body>
